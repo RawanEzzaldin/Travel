@@ -16,10 +16,122 @@
                     counter=1;
                 }
             },3000);
+
+            $(document).ready(function(){
+			// Function to set the sidebar height
+			function setSidebarHeight() {
+				var heig = $(window).height(); // 85% of the current window height
+				$("#header-sidebar").css("height", heig + "px");
+			}
+
+			// Initial setup
+			setSidebarHeight();
+
+			// Recalculate height when the window is resized (including zooming)
+			$(window).on("resize", function() {
+				setSidebarHeight();
+			});
+		});
         </script>
     </head>
     <body>
-        <?php require_once("header.php"); ?>
+        <div class="header">
+            <div class="header-wrapper">
+                <div class="header-logo">
+                    <img src="img/logo.png" alt="logo" width="100%" height="100%">
+                </div> <!-- /header-logo -->
+
+                <div class="header-nav">
+                    <div class="header-nav-item first-nav-item">
+                        <a href="index.php">الصفحة الرئيسية</a>
+                    </div> <!-- /header-nav-item -->
+                    <div class="header-nav-item drop">
+                        <button class="dropbtn">السياحة<i  class="fas fa-caret-down"></i></button>
+                        <div class="header-tourism" id="header-tourism" >
+                            <div class="header-tourism-item">
+                                <a href="insideTourism.php"> <span>سياحة داخلية</span> </a>  
+                            </div> <!-- /header-tourism-item -->
+                            <hr>
+                            <div class="header-tourism-item">
+                                <a href="outsideTourism.php"> <span>سياحة خارجية</span> </a>  
+                            </div> <!-- /header-tourism-item -->
+                            <hr>
+                            <div class="header-tourism-item">
+                                <a href="islamicTourism.php"> <span>سياحة دينية</span> </a>  
+                            </div> <!-- /header-tourism-item -->
+                    
+                        </div> <!-- /header-tourism -->
+                    </div> <!-- /header-nav-item -->
+                    <div class="header-nav-item">
+                        <a  href="diploma.php">دبلومتنا</a>
+                    </div> <!-- /header-nav-item -->
+                    <div class="header-nav-item">
+                        <a  href="about.php">اعرف عنا</a>
+                    </div> <!-- /header-nav-item -->
+                    <div class="header-nav-item">
+                        <a  href="contact.php">تواصل معنا</a>
+                    </div> <!-- /header-nav-item -->
+                </div> <!-- /header-nav -->
+
+                <div class="header-icons">
+                    <div class="header-icons-icon">
+                        <a href="https://www.facebook.com/m2nTourism/" target="_blank"> <img src="img/facebook.png" alt="facebook" width="100%" height="100%"> </a>
+                    </div> <!-- /header-icons-icon -->
+                    <div class="header-icons-icon">
+                        <a href="https://api.whatsapp.com/send?phone=%2B201289372084&data=ARAE7m-iKG8vMhUvBORd6_FgzA5BQUXaYBABnlxKd5YiBXBeqXc6fP9cbkUFsGL2pU2RrbBozCSp5T_VMDqTA9wtkW4vHVUUQAHzBr_34J7Akkzp7NLBzbceNvd51NqRjrA0aFC6Sw7xdnn2RFVgKbfyYQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwAR24XGe8QArnVIou5IPjfdCiWL6v0JyFh_c7-1fcNavr7z2d6B2kbAt4tXY" target="_blank"> <img src="img/whatsapp.png" alt="whatsapp" width="100%" height="100%"> </a>
+                    </div> <!-- /header-icons-icon -->
+                </div>  <!-- /header-icons -->
+
+                <div class="header-menu">
+                    <button onclick="showsidebar()"><img src="img/menu.png" alt="menu"></button>
+                </div> <!-- /header-menu -->
+
+                <div class="header-sidebar" id="header-sidebar">
+                    <i class="fas fa-times-circle" style="color: #080808;" onclick="hidesidebar()"></i>
+                    <div class="header-sidebar-content">    
+                        <div class="header-sidebar-item">
+                            <a href="index.php">الصفحة الرئيسية</a>
+                            <i class="fas fa-home" style="color: #121212;"></i>
+                        </div> <!-- /header-sidebar-item -->
+                        <div class="header-sidebar-item travel" onclick="showsidebartourism()">
+                            <a>السياحة</a>
+                            <i class="fas fa-plane" style="color: #121212;"></i>
+                        </div> <!-- /header-sidebar-item -->
+                        <div class="header-sidebar-tourism" id="header-sidebar-tourism" >
+                                
+                                <div class="header-sidebar-tourism-item">
+                                    <a href="insideTourism.php"> <span>سياحة داخلية</span> </a>  
+                                    <i class="fas fa-circle" style="color: #080808;"></i>
+                                </div> <!-- /header-sidebar-tourism-item -->
+                                <hr>
+                                <div class="header-sidebar-tourism-item">
+                                    <a href="outsideTourism.php"> <span>سياحة خارجية</span> </a>  
+                                    <i class="fas fa-circle" style="color: #080808;"></i>
+                                </div> <!-- /header-sidebar-tourism-item -->
+                                <hr>
+                                <div class="header-sidebar-tourism-item">
+                                    <a href="islamicTourism.php"> <span>سياحة دينية</span> </a>  
+                                    <i class="fas fa-circle" style="color: #080808;"></i>
+                                </div> <!-- /header-sidebar-tourism-item -->
+                        
+                        </div> <!-- /header-sidebar-tourism -->
+                        <div class="header-sidebar-item">
+                            <a href="diploma.php">دبلومتنا</a>
+                            <i class="fas fa-chalkboard-teacher" style="color: #050505;"></i>
+                        </div> <!-- /header-sidebar-item -->
+                        <div class="header-sidebar-item">
+                            <a href="about.php">اعرف عنا</a>
+                            <i class="fas fa-address-card" style="color: #000000;"></i>
+                        </div> <!-- /header-sidebar-item -->
+                        <div class="header-sidebar-item">
+                            <a href="contact.php">تواصل معنا</a>
+                            <i class="fas fa-envelope" style="color: #050505;"></i>
+                        </div> <!-- /header-sidebar-item -->
+                    </div> <!-- /header-sidebar-content -->
+                </div> <!-- /header-sidebar -->
+            </div> <!-- /header-wrapper -->
+
+        </div> <!-- /header -->
         <div class="main">
 
             <div class="main-container">
@@ -443,21 +555,21 @@
                         <h3>خدماتنا</h3> <hr>
                     </div> <!-- /services-title -->
                     <div class="services-item">
-                        <img src="img/s1.png" draggable="false">
+                        <img src="img/s1.PNG" draggable="false">
                         <h4>خدمة 1</h4>
                         <span>
                              أفضل خدمة على الإطلاق أفضل خدمة على الإطلاق أفضل خدمة على الإطلاق
                         </span>
                     </div> <!-- /services-item -->
                     <div class="services-item">
-                        <img src="img/s2.png" draggable="false">
+                        <img src="img/s2.PNG" draggable="false">
                         <h4>خدمة 2</h4>
                         <span>
                              أفضل خدمة على الإطلاق أفضل خدمة على الإطلاق أفضل خدمة على الإطلاق
                         </span>
                     </div> <!-- /services-item -->
                     <div class="services-item">
-                        <img src="img/s3.png" draggable="false">
+                        <img src="img/s3.PNG" draggable="false">
                         <h4>خدمة 3</h4>
                         <span>
                              أفضل خدمة على الإطلاق أفضل خدمة على الإطلاق أفضل خدمة على الإطلاق
@@ -498,8 +610,63 @@
                     </div> <!-- /feedback-item -->
                 </div> <!-- /feedback -->
             </div> <!-- /main-container6 -->
-
-            <?php require_once("footer.php"); ?>
+            <div class="footer">
+                <div class="footer-item first">
+    
+                    <!-- <a href="https://maps.app.goo.gl/Hq1N4BXH3VEfNJCY6" target="_blank">الجيزة-حدايق الأهرام-55ح شارع الضغط العالي
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+    
+                    <br><br>
+                    <a href="tel:01553245182" >01553245182
+                        <i class="fas fa-phone"></i> -->
+    
+                    <!-- </a> -->
+    
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="logo">
+                    </div> <!-- /footer-logo -->
+                </div> <!-- /footer-item -->
+    
+                <div class="footer-item second">
+                    <!-- <a href="privacyPolicy.php" class="second-a">سياسة الخصوصية</a>
+                    <a href="about.php" class="second-a">اعرف عنا</a>
+                    <a href="contact.php" class="second-a">تواصل معنا</a> -->
+    
+                    <!-- <h5>العنوان</h5>
+                    <br>
+                    <a href="https://maps.app.goo.gl/Hq1N4BXH3VEfNJCY6" target="_blank">الجيزة-حدايق الأهرام   
+                        <p>55 <bdi> ح شارع الضغط العالي</p>
+                    </a> -->
+    
+                    <a href="https://www.facebook.com/m2nTourism/" target="_blank"><i class="fab fa-facebook-square" ></i> </a>
+                    <a href="https://api.whatsapp.com/send?phone=%2B201289372084&data=ARAE7m-iKG8vMhUvBORd6_FgzA5BQUXaYBABnlxKd5YiBXBeqXc6fP9cbkUFsGL2pU2RrbBozCSp5T_VMDqTA9wtkW4vHVUUQAHzBr_34J7Akkzp7NLBzbceNvd51NqRjrA0aFC6Sw7xdnn2RFVgKbfyYQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwAR24XGe8QArnVIou5IPjfdCiWL6v0JyFh_c7-1fcNavr7z2d6B2kbAt4tXY" target="_blank">
+                        <i class="fab fa-whatsapp-square" ></i>
+                    </a>
+                    <a href="tel:01553245182">
+                        <i class="fas fa-phone-square-alt"></i>
+                    </a>
+                    
+                </div> <!-- /footer-item -->
+                <div class="footer-item third">
+                    <!-- <a href="https://www.facebook.com/m2nTourism/" target="_blank"><img src="img/facebook2.png" alt="facebook" ></a>
+                    <a href="https://api.whatsapp.com/send?phone=%2B201289372084&data=ARAE7m-iKG8vMhUvBORd6_FgzA5BQUXaYBABnlxKd5YiBXBeqXc6fP9cbkUFsGL2pU2RrbBozCSp5T_VMDqTA9wtkW4vHVUUQAHzBr_34J7Akkzp7NLBzbceNvd51NqRjrA0aFC6Sw7xdnn2RFVgKbfyYQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwAR24XGe8QArnVIou5IPjfdCiWL6v0JyFh_c7-1fcNavr7z2d6B2kbAt4tXY" target="_blank"><img src="img/whatsapp2.png" alt="whatsapp" ></a>
+                    <a href="tel:01553245182" ><img src="img/phone.png" alt="phone" class="phone"></a> -->
+                    
+                    <div class="third-add">
+                        <a href="https://maps.app.goo.gl/Hq1N4BXH3VEfNJCY6" target="_blank">الجيزة-حدايق الأهرام-55ح شارع الضغط العالي
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </div> <!-- /third-add -->
+                   
+                    <div class="third-call">
+                        <a href="tel:01553245182" >01553245182
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div> <!-- /third-call -->
+                   
+                </div> <!-- /footer-item -->
+            </div> <!-- /footer -->
         </div><!-- /main -->
         <!-- <script src="javascript/js.js"></script> -->
 
