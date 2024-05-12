@@ -1,0 +1,245 @@
+.main-container1{
+  width: 100%;
+  margin: auto;
+  /* text-align: right; */
+}
+.insideEgypt{
+  display: flex;
+padding: 0 35px;
+height: 500px;
+align-items: center;
+justify-content: center;
+/* background: #343F4F; */
+/* border: 1px solid black; */
+}
+.insideEgypt-img{
+  display: flex;
+max-width: 700px;
+position: relative;
+}
+.insideEgypt-img i{
+  top: 50%;
+height: 44px;
+width: 44px;
+color: #343F4F;
+cursor: pointer;
+font-size: 1.15rem;
+position: absolute;
+text-align: center;
+line-height: 44px;
+background: #fff;
+border-radius: 50%;
+transform: translateY(-50%);
+transition: transform 0.1s linear;
+z-index: 5;
+}
+.insideEgypt-img i:active{
+transform: translateY(-50%) scale(0.9);
+}
+.insideEgypt-img i:hover{
+background: #f2f2f2;
+}
+.insideEgypt-img i:first-child{
+left: -22px;
+display: none;
+}
+.insideEgypt-img i:last-child{
+right: -20px;
+}
+.insideEgypt-img .insideEgypt-img-item{
+  font-size: 0px;
+cursor: pointer;
+overflow: hidden;
+white-space: nowrap;
+scroll-behavior: smooth;
+}
+.insideEgypt-img-item.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.insideEgypt-img-item.dragging img{
+  pointer-events: none;
+}
+.insideEgypt-img-item img{
+  width: 700px;
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+}
+.insideEgypt-img-item img:first-child{
+  margin-left: 0px;
+}
+.beach{
+  position: relative;
+  display: inline-block;
+}
+.beach-overlay{
+  width: 700px;
+  height: 65px;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  /* padding: 20px 20px; */
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* visibility: hidden; */
+}
+.beach-overlay span{
+  color: white;
+  font-size: 27px;
+  display: block;
+}
+.hotel{
+  position: relative;
+  display: inline-block;
+  margin-left: 14px;
+}
+.hotel-overlay{
+  width: 700px;
+  height: 65px;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  /* padding: 20px 20px; */
+  /* display: none; */
+  z-index: 10;
+  /* margin-left: 5px; */
+  /* visibility: hidden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hotel-overlay span{
+  color: white;
+  font-size: 27px;
+  display: block;
+}
+.couples{
+  position: relative;
+  display: inline-block;
+  margin-left: 14px;
+}
+.couples-overlay{
+  width: 700px;
+  height: 65px;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  /* padding: 20px 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  /* margin-left: 7px; */
+  /* visibility: hidden; */
+}
+.couples-overlay span{
+  color: white;
+  font-size: 27px;
+  display: block;
+}
+.flights{
+  position: relative;
+  display: inline-block;
+  margin-left: 14px;
+}
+.flights-overlay{
+  width: 700px;
+  height: 65px;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  /* padding: 10px 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  /* margin-left: 7px; */
+  /* visibility: hidden; */
+}
+.flights-overlay span{
+  color: white;
+  font-size: 27px;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mobile-tab{
+  width: 90%;
+  height: 100px;
+  /* border: 1px solid #343F4F; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.mobile-tab button{
+  width: 100%;
+  height: 100%;
+  background-color:rgb(235, 100, 47);
+  border: none;
+  color: white;
+  font-size: 30px;
+  /* border-radius: 20px; */
+}
+.diploma-mobile-content{
+  width: 70%;
+  height: 90%;
+  /* border: 1px solid darkblue; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.diploma-mobile-img{
+  width: 100%;
+  height: 50%;
+  border: 1px solid darkmagenta;
+}
+.diploma-mobile-img img{
+  width: 100%;
+  height: 100%;
+}
+.diploma-mobile-details{
+  width: 100%;
+  height: 50%;
+  border: 1px solid burlywood;
+  text-align: right;
+  padding: 50px 20px;
+}
+.diploma-mobile-details p{
+  font-size: 20px;
+  line-height: 25px;
+}
+.diploma-mobile-details button{
+  width: 150px;
+  height: 42px;
+  font-size: 17px;
+  float: left;
+  border-radius: 5px 30px;
+  border: none;
+  margin-top: 15%;
+  margin-left: 10%;
+  background-color: navy;
+  color: white;
+  cursor: pointer;
+}
+

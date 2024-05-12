@@ -1,0 +1,3088 @@
+@font-face {
+    font-family: cairo;
+    src: url(Alexandria-VariableFont_wght.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cairo;
+}
+body{
+    overflow-x: hidden;
+    /* direction: rtl; */
+    
+}
+@media all and (min-width:1000px){
+    .header{
+        width: 100%;
+        height: 90px;
+        background-color: rgb(239, 244, 252);
+        position: relative;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 20;
+        border-bottom: 2px solid gray;
+    }
+    .header-wrapper{
+        max-width: 1300px;
+        height: 100%;
+        margin: 0px auto;
+        text-align: right;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid black; */
+        /* overflow: auto; */
+    }
+    .header-logo{
+        width: 25%;
+        height: 90px;
+        /* border: 1px solid black; */
+        /* float: right; */
+        /* margin-top: 10px; */
+        /* margin-right: 100px; */
+    }
+    .header-nav{
+        width: 60%;
+        height: 85px;
+        /* float: right; */
+        /* border: 1px solid black; */
+        /* margin-right: 5%; */
+        /* display: none; */
+        /* padding-right: 5%; */
+    }
+    .header-nav-item{
+        width: fit-content;
+        height: 30px;
+        /* border: 1px solid black; */
+        float: right;
+        margin-top: 30px;
+        margin-right: 5%;
+    }
+    .first-nav-item{
+        margin-right: 0;
+    }
+    .header-nav-item > a{
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .header-nav-item >button:after{
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: cornflowerblue;
+        margin-top: 4px;
+        transition: 0.5s;
+        display: block;
+    }
+    .header-nav-item > button:hover:after{
+        width: 100%;
+    }
+    .header-nav-item >a:after{
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: cornflowerblue;
+        margin-top: 4px;
+        transition: 0.5s;
+        display: block;
+    }
+    .header-nav-item >a:hover:after{
+        width: 100%;
+    }
+    
+    .header-nav-item button{
+        padding: 0px 8px 0px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            border: none;
+            background: none;
+            color: black;
+            width: 100%;
+            text-align: right;
+            cursor: pointer;
+            outline: none;
+    }
+    .header-nav-item i{
+        margin-left: 10px;
+    }
+    .header-tourism{
+        width: 180px;
+        padding-top: 40px;
+        height: 200px;
+        /* border: 1px solid black; */
+        position: absolute;
+        top: 60%;
+        right: 41%;
+        background-color: rgb(239, 244, 252);
+        /* padding: 20px 10px; */
+        text-align: right;
+        display: none;
+        z-index: 10;
+    }
+    .drop:hover .header-tourism{
+        display: block;
+    }
+    
+    .header-tourism img{
+        width: 20px;
+        float: right;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .header-tourism-item{
+        text-align: center;
+        width: 100%;
+        height: 45px;
+        /* border:1px solid black ; */
+        padding-top: 12px;
+        /* background-color: cornflowerblue; */
+    }
+    .header-tourism-item>a{
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
+    .header-tourism-item:hover{
+        background-color: cornflowerblue;
+    }
+    .header-tourism-item:hover a{
+        color: white;
+    }
+    .header-tourism hr{
+        width: 140px;
+        margin: 0px auto;
+    }
+    .header-icons{
+        width: 10%;
+        height: 30px;
+        /* float: left; */
+        /* margin-left: 100px; */
+        /* margin-top: 30px; */
+        /* border: 1px solid black; */
+        /* display: none; */
+    }
+    .header-icons-icon{
+        width: 30px;
+        height: 100%;
+        float: left;
+        margin-left: 20px;
+    }
+    .header-menu{
+        display: none;
+    }
+    .header-sidebar{
+        display: none;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    /* ----------------index page------------------- */
+    .main{
+        width: 100%;
+        margin: auto;
+        min-height: 100vh;
+        position: relative;
+        margin-top: 90px;
+    }
+    .main-container1-mobile{
+        display: none;
+    }
+    .main-container{
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-img-slider{
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+    .main-img-slides{
+        width: 500%;
+        height: 400px;
+        display: flex;
+    }
+    .main-img-slides input{
+        display: none;
+    }
+    .slide{
+        width: 20%;
+        transition: 2s;
+    }
+    .slide img{
+        width: 100%;
+        height: 400px;
+    }
+    .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 360px;
+    }
+    .navigation-auto div{
+        border: 2px solid cornflowerblue;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    .navigation-auto div:not(:last-child){
+        margin-right: 40px;
+    }
+    #radio1:checked ~ .first{
+        margin-left: 0;
+    }
+    #radio2:checked ~ .first{
+        margin-left: -20%;
+    }
+    #radio3:checked ~ .first{
+        margin-left: -40%;
+    }
+    #radio4:checked ~ .first{
+        margin-left: -60%;
+    }
+    #radio1:checked ~ .navigation-auto .auto-btn1{
+        background: cornflowerblue;
+    }
+    #radio2:checked ~ .navigation-auto .auto-btn2{
+        background: cornflowerblue;
+    }
+    #radio3:checked ~ .navigation-auto .auto-btn3{
+        background: cornflowerblue;
+    }
+    #radio4:checked ~ .navigation-auto .auto-btn4 {
+        background: cornflowerblue;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container1{
+        width: 100%;
+        margin: auto;
+        /* text-align: right; */
+    }
+    .insideEgypt{
+        display: flex;
+      padding: 0 35px;
+      height: 500px;
+      align-items: center;
+      justify-content: center;
+      /* background: #343F4F; */
+      /* border: 1px solid black; */
+    }
+    .insideEgypt-title{
+        width: 100%;
+        height: 50px;
+        /* border: 1px solid black; */
+        float: right;
+        /* font-size: 30px; */
+        text-align: right;
+        padding: 60px 50px;
+    }
+    .insideEgypt-title h3{
+        font-size: 30px;
+    }
+    .insideEgypt-img{
+        display: flex;
+      max-width: 1400px;
+      min-width: 1000px;
+      position: relative;
+      /* border: 1px solid black; */
+    }
+    .insideEgypt-img i{
+        top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      position: absolute;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 5;
+    }
+    .insideEgypt-img i:active{
+      transform: translateY(-50%) scale(0.9);
+    }
+    .insideEgypt-img i:hover{
+      background: #f2f2f2;
+    }
+    .insideEgypt-img i:first-child{
+      left: -22px;
+      display: none;
+    }
+    .insideEgypt-img i:last-child{
+      right: -20px;
+    }
+    .insideEgypt-img .insideEgypt-img-item{
+        font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+    }
+    .insideEgypt-img-item.dragging{
+        cursor: grab;
+        scroll-behavior: auto;
+    }
+      .insideEgypt-img-item.dragging img{
+        pointer-events: none;
+    }
+      .insideEgypt-img-item img{
+        height: 340px;
+        object-fit: cover;
+        user-select: none;
+        margin-left: 14px;
+        width: 500px;
+    }
+      .insideEgypt-img-item img:first-child{
+        margin-left: 0px;
+    }
+    .beach{
+        position: relative;
+        display: inline-block;
+    }
+    .beach-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* visibility: hidden; */
+    }
+    .beach-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    .hotel{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+    }
+    .hotel-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* text-align: center; */
+        padding: 20px 20px;
+        /* display: none; */
+        z-index: 10;
+        /* margin-left: 5px; */
+        /* visibility: hidden; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hotel-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    .couples{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+    }
+    .couples-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 7px; */
+        /* visibility: hidden; */
+    }
+    .couples-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    .flights{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+    }
+    .flights-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 10px 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 7px; */
+        /* visibility: hidden; */
+    }
+    .flights-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container2{
+        width: 100%;
+        margin: auto;
+    }
+    .outsideEgypt{
+        display: flex;
+      padding: 0 35px;
+      height: 500px;
+      align-items: center;
+      justify-content: center;
+      /* background: #343F4F; */
+      /* border: 1px solid black; */
+    }
+    .outsideEgypt-title{
+        width: 100%;
+        height: 50px;
+        /* border: 1px solid black; */
+        float: right;
+        /* font-size: 30px; */
+        text-align: right;
+        padding: 60px 50px;
+    }
+    .outsideEgypt-title h3{
+        font-size: 30px;
+    }
+    .outsideEgypt-img{
+        display: flex;
+        max-width: 1400px;
+        min-width: 1000px;
+      position: relative;
+    }
+    .outsideEgypt-img i{
+        top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      position: absolute;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 5;
+    }
+    .outsideEgypt-img i:active{
+      transform: translateY(-50%) scale(0.9);
+    }
+    .outsideEgypt-img i:hover{
+      background: #f2f2f2;
+    }
+    .outsideEgypt-img i:first-child{
+      left: -22px;
+      display: none;
+    }
+    .outsideEgypt-img i:last-child{
+      right: -22px;
+    }
+    .outsideEgypt-img .outsideEgypt-img-item{
+        font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+    }
+    .outsideEgypt-img-item.dragging2{
+        cursor: grab;
+        scroll-behavior: auto;
+      }
+      .outsideEgypt-img-item.dragging2 img{
+        pointer-events: none;
+      }
+      .outsideEgypt-img-item img{
+        height: 340px;
+        object-fit: cover;
+        user-select: none;
+        margin-left: 14px;
+        width: 500px;
+      }
+      .outsideEgypt-img-item img:first-child{
+        margin-left: 0px;
+    }
+    .europe{
+        position: relative;
+        display: inline-block;
+    }
+    .europe-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* opacity: 0; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* visibility: hidden; */
+    }
+    .europe-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }   
+    .turkey{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+    }
+    .turkey-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 10px 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 5px; */
+        /* visibility: hidden; */
+    }
+    .turkey-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    .visa{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+    }
+    .visa-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 10px 20px;
+        display: none; */
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* margin-left: 7px; */
+        /* visibility: hidden; */
+    }
+    .visa-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container3{
+        width: 100%;
+        margin: auto;
+    }
+    .hajj{
+        display: flex;
+      padding: 0 35px;
+      height: 500px;
+      align-items: center;
+      justify-content: center;
+      /* background: #343F4F; */
+      /* border: 1px solid black; */
+    }
+    .hajj-title{
+        width: 100%;
+        height: 50px;
+        /* border: 1px solid black; */
+        float: right;
+        /* font-size: 30px; */
+        text-align: right;
+        padding: 60px 50px;
+    }
+    .hajj-title h3{
+        font-size: 30px;
+    }
+    .hajj-img{
+        display: flex;
+        max-width: 1400px;
+        min-width: 1000px;
+      position: relative;
+    }
+    .hajj-img i{
+        top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      position: absolute;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 5;
+    }
+    .hajj-img i:active{
+      transform: translateY(-50%) scale(0.9);
+    }
+    .hajj-img i:hover{
+      background: #f2f2f2;
+    }
+    .hajj-img i:first-child{
+      left: -20px;
+      display: none;
+    }
+    .hajj-img i:last-child{
+      right: -22px;
+    }
+    .hajj-img .hajj-img-item{
+        font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+    }
+    .hajj-img-item.dragging3{
+        cursor: grab;
+        scroll-behavior: auto;
+    }
+    .hajj-img-item.dragging3 img{
+        pointer-events: none;
+    }
+    .hajj-img-item img{
+        height: 340px;
+        object-fit: cover;
+        user-select: none;
+        margin-left: 14px;
+        width: 500px;
+    }
+    .hajj-img-item img:first-child{
+        margin-left: 0px;
+    }
+    .hajj-flights{
+        position: relative;
+        display: inline-block;
+    }
+    .hajj-flights-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* visibility: hidden; */
+    }
+    .hajj-flights-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    .hajj-hotels{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+    }
+    .hajj-hotels-overlay{
+        width: 100%;
+        height: 65px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 5px; */
+        /* visibility: hidden; */
+    }
+    .hajj-hotels-overlay span{
+        color: white;
+        font-size: 27px;
+        display: block;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container4{
+        width: 100%;
+        margin: auto;
+    }
+    .diploma{
+        width: 100%;
+        height: 600px;
+        /* border: 1px solid black; */
+        margin: auto;
+        padding-top: 50px;
+    }
+    .diploma-content{
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        /* border: 1px solid navy; */
+    }
+    .diploma-content-img{
+        width: 40%;
+        height: 500px;
+        /* border:   1px solid black; */
+        float: right;
+    }
+    .diploma-content-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .diploma-content-details{
+        width: 55%;
+        height: 100%;
+        /* border: 1px solid black; */
+        float: right;
+        margin-right: 40px;
+        text-align: right;
+        padding: 50px;
+    }
+    .diploma-content-details h2{
+        font-size: 200%;
+        line-height: 100px;
+    }
+    .diploma-content-details p{
+        font-size: 150%;
+        font-weight: 300;
+        color: rgb(37, 37, 37);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .diploma-content-details button{
+        width: 200px;
+        height: 10%;
+        float: left;
+        margin-top: 4%;
+        font-size: 100%;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(89, 162, 187);
+        color: white; 
+        cursor: pointer;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container5{
+        width: 100%;
+        margin: auto;
+    }
+    .counter{
+        width: 100%;
+        height: 300px;
+        /* border: 1px solid black; */
+        background-image: url(../img/countercover.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        z-index: -1;
+    }
+    .counter-overlay{
+        width: 100%;
+        height: 100%;
+        position: absolute; top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+    .counter-content{
+        width: 85%;
+        height: 200px;
+        /* margin: 100px auto; */
+        /* border: 2px solid navy; */
+        /* z-index: 10; */
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .counter-content-item{
+        width: 250px;
+        height: 100%;
+        /* background-color: brown;  */
+        margin-right: 10px;
+        float: left;
+        padding: 40px  10px;
+        text-align: center;
+    }
+    .counter-content-item i{
+        font-size: 50px; 
+        color: cornflowerblue;
+    }
+    .counter-content-item h3{
+        font-size: 35px;
+        color: white;
+        line-height: 60px;
+    }
+    .counter-content-item span{
+        font-size: 18px;
+        color: white;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container6{
+        width: 100%;
+        margin: auto;
+        height: 750px;
+    }
+    .services{
+        width: 49%;
+        height: 500px;
+        float: right;
+        margin: 0px 10px;
+        /* border: 1px solid black; */
+        background-color: whitesmoke;
+        margin-top: 50px;
+        text-align: center;
+        padding: 0px 20px;
+    }
+    .services-title{
+        width: 400px;
+        height: 60px;
+        margin: 50px auto;
+        /* border: 1px solid black; */
+    }
+    .services-title h3{
+        font-size: 35px;
+    }
+    .services-title hr{
+        width: 60px;
+        border: 3px solid orangered;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .services-item{
+        width: 27%;
+        height: 300px;
+        /* border: 1px solid black; */
+        float: right;
+        margin: 0px 3%;
+        text-align: center;
+        padding: 10px 0px;
+    }
+    .services-item  img{
+        width: 100px;
+        height: 100px;
+    }
+    .services-item h4{
+        font-size: 20px;
+        line-height: 60px;
+    }
+    .feedback{
+        width: 48%;
+        height: 500px;
+        float: right;
+        margin: 0px 5px;
+        /* border: 1px solid black; */
+        background-color: rgb(241, 234, 234);
+        margin-top: 50px;
+        text-align: center;
+        padding: 0px 20px;
+    }
+    .feedback-title{
+        width: 400px;
+        height: 60px;
+        margin: 50px auto;
+        /* border: 1px solid black; */
+    }
+    .feedback-title h3{
+        font-size: 35px;
+    }
+    .feedback-item{
+        width: 46%;
+        height: 250px;
+        /* border: 1px solid black; */
+        float: right;
+        margin: 0px 3% 0px 0px;
+        background-color: white;
+        text-align: right;
+        padding: 20px 25px;
+    }
+    .feedback-item i{
+        font-size: 50px;
+        float: right;
+    }
+    .feedback-item-title{
+        width: 150px;
+        height: 70px;
+        /* border: 1px solid black; */
+        float: right;
+        margin-right: 50px;
+        padding: 0px 15px;
+    }
+    .feedback-item-title h4{
+        font-size: 20px;
+        /* display: inline-block; */
+        margin: 0px 80px;
+    }
+    .feedback-item-title i{
+        font-size: 18px;
+        margin-top: 10px;
+        color: gold;
+    }
+    .feedback-item-content{
+        width: 90%;
+        height: 100px;
+        /* border: 1px solid chocolate; */
+        margin: 100px auto;
+    }
+     /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    /* ----------------diploma page------------------- */
+    .main-img-diploma{
+        width: 100%;
+        height: 400px;
+        /* border: 1px solid hotpink; */
+        margin-top: 90px;
+        position: relative;
+    }
+    .main-img-diploma img{
+        width: 100%;
+        height: 100%;
+    }
+    .diploma-section{
+        width: 60%;
+        height: 200px;
+        /* border: 1px solid red; */
+        position: absolute;
+        bottom: -25%;
+        right: 20%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .diploma-section-block{
+        width: 30%;
+        height: 100%;
+        position: relative;
+       transform-style: preserve-3d;
+       transition: 2s;
+
+    }
+    .diploma-section-block h3{
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .diploma-section-block i{
+        font-size: 50px;
+        line-height: 70px;
+    }
+    .front{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(35, 70, 136);
+        text-align: center;
+        color: white;
+        padding-top: 40px;
+        /* border-radius: 30px; */
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        backface-visibility: hidden;
+    }
+    .back,.back2,.back3{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: white;
+        padding-top: 40px;
+        /* border-radius: 30px; */
+        position: absolute;
+        top: 0;
+        transform: rotateY(180deg);
+        position: relative;
+        background-position: center;
+        background-size: cover;
+    }
+    .back{
+        background-image: url(../img/certificate.jpg);
+    }
+    .back2{
+        background-image: url(../img/instructor.jpg);
+    }
+    .back3{
+        background-image: url(../img/certificate.jpg);
+    }
+    .back-overlay{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .diploma-section-block:hover{
+        transform: rotateY(180deg);
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .diploma-container1{
+        width: 100%;
+        margin: auto;
+        height: 1600px;
+        margin-top: 150px;
+    }
+    .diploma-container1 hr{
+        border: 0;
+        margin: 1.35em auto;
+        max-width: 100%;
+        background-position: 50%;
+        box-sizing: border-box;
+        margin: 100px auto;
+    }
+    .accessory {
+        height: 10px;
+        background-image: radial-gradient(
+          closest-side,
+              rgb(29, 43, 83),
+              hsla(241, 73%, 38%, 0) 100%);
+        position: relative;
+        animation: separator-width 5s ease-out forwards;
+    }
+    @keyframes separator-width {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    .diploma-container1-content{
+        width: 100%;
+        margin: auto;
+        height: 600px;
+        /* background-color: ; */
+        /* border: 1px solid red; */
+        /* margin-top: 100px; */
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        padding-top: 70px;
+        justify-content: space-evenly;
+        background-color: rgb(240, 235, 235);
+    }
+    .diploma-container1-img{
+        width: 45%;
+        height: 90%;
+        /* border: 1px solid indianred; */
+    }
+    .diploma-container1-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .diploma-container1-details{
+        width: 45%;
+        height: 90%;
+        /* border: 1px solid cadetblue; */
+        padding: 70px 0px;
+    }
+    .diploma-container1-details h3{
+        font-size: 25px;
+    }
+    .diploma-container1-details p{
+        font-size: 17px;
+        line-height: 25px;
+    }
+    .diploma-container1-details button{
+        width: 150px;
+        height: 42px;
+        font-size: 17px;
+        float: left;
+        border-radius: 5px 30px;
+        border: none;
+        margin-top: 15%;
+        margin-left: 10%;
+        background-color: navy;
+        color: white;
+        cursor: pointer;
+    }
+    .diploma-container-mobile{
+        display: none;
+    }
+    .diploma-section-mobile{
+        display: none;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    /* ----------------Islamic Tourism page------------------- */
+    .main-islamic{
+        width: 100%;
+        height: 500px;
+        /* margin-top: 130px; */
+        /* border: 1px solid brown; */
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        /* justify-content: space-evenly; */
+    }
+    .main-islamic-title{
+        width: 40%;
+        height: 100%;
+        /* border: 1px solid red; */
+        margin-right: 5%;
+        padding: 140px 50px;
+        text-align: right;
+        /* background-color: F4D160; */
+    }
+    .main-islamic-title h2{
+        font-size: 50px;
+
+    }
+    .main-islamic-title x{
+        color: rgb(167, 90, 36);
+    }
+    .main-islamic-title p{
+        font-size:  22px;
+    }
+    .main-islamic-title button{
+        width: 170px;
+        height: 50px;
+        font-size: 25px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        background-color: rgb(167, 90, 36);
+        float: left;
+        margin-top: 7%;
+        margin-left: 10%;
+        transition: .5s;
+        cursor: pointer;
+    }
+    .main-islamic-title button:hover {
+        transform: scale(1.1);
+    }
+    .main-islamic-video{
+        width: 40%;
+        height: 100%;
+        /* border: 1px solid black; */
+        margin-right: 10%;
+        /* background-color: grey; */
+        /* padding: 50px;/ */
+    }
+    .main-islamic-video video{
+        width: 100%;
+        height: 100%;
+    }
+     .islamic-container1{
+         width: 100%;
+         margin: auto;
+     }
+     .islamic-tours{
+         width: 90%;
+         height: 650px;
+         /* border: 1px solid rgb(29, 43, 83); */
+         margin: 50px auto;
+         display: flex;
+         flex-direction: row-reverse;
+         flex-wrap: nowrap;
+         justify-content: space-between;
+     }
+     .islamic-tour-block{
+         width: 32%;
+         height: 100%;
+         /* border: 1px solid fuchsia; */
+         position: relative;
+     }
+     .islamic-tour-img{
+         width: 100%;
+         height: 350px;
+         /* border: 1px solid greenyellow; */
+     }
+     .islamic-tour-img img{
+         width: 100%;
+         height: 100%;
+     }
+     .islamic-tour-title{
+         width: 150px;
+         height: 50px;
+         border: 1px solid rgb(167, 90, 36);
+         background-color: white;
+         border-radius: 20px;
+         /* margin: -25px auto; */
+         /* z-index: 10; */
+         position: absolute;
+         top: 325px;
+         left: 33%;
+         text-align: center;
+         font-size: 22px;
+         padding-top: 8px;
+     }
+     .islamic-tour-content{
+         width: 100%;
+         height: 250px;
+         margin-top: 50px;
+         /* border: 1px solid darkcyan; */
+         padding: 25px;
+         text-align: center;
+     }
+     .islamic-tour-content p{
+         font-size: 18px;
+     }
+     .islamic-tour-content button{
+         width: 190px;
+         height: 45px;
+         margin-top: 10%;
+         font-size: 20px;
+         border: 1px solid darkcyan;
+         border-radius: 10px;
+         background: none;
+     }
+     .islamic-tour-content button:hover{
+         background-color: darkcyan;
+         color: white;
+     }
+     .islamic-container2{
+         width: 100%;
+         margin: auto;
+         height: 900px;
+     }
+     .islamic-services{
+         width: 100%;
+         height: 650px;
+         /* border: 1px solid firebrick; */
+         /* margin: auto; */
+         background-color: rgb(241, 241, 241);
+     }
+     .islamic-services-content{
+         width: 90%;
+         height: 100%;
+         margin: auto;
+         /* border: 1px solid rgb(29, 43, 83); */
+         text-align: center;
+         padding-top: 50px;
+     }
+     .islamic-services-content h2{
+         font-size: 35px;
+     }
+     .islamic-services-content hr{
+         width: 150px;
+         margin: 15px auto;
+         border: 3px solid rgb(167, 90, 36);
+         transition: .5s;
+     }
+     .islamic-services-blocks{
+         width: 100%;
+         height: 450px;
+         /* border: 1px solid firebrick; */
+         margin-top: 50px;
+         display: flex;
+         flex-direction: row-reverse;
+         flex-wrap: nowrap;
+         justify-content: space-between;
+     }
+     .islamic-services-block{
+         width: 31%;
+         height: 100%;
+         border: 1px solid black;
+         position: relative;
+         border-bottom-left-radius: 10px;
+         border-bottom-right-radius: 10px;
+     }
+     .islamic-services-block img{
+         width: 100%;
+         height: 85%;
+     }
+     .islamic-services-block p{
+         font-size: 28px;
+     }
+     .islamic-services-block::after{
+        content: "يسعدنا المساعدة في إصدار تزاكر الطيران لكافة الخطوط الجوية والمحلية والدولية على مدار الساعة طوال أيام الاسبوع";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0;
+        width: 100%;
+        height: 0;
+        transition: 1s;
+        color: white;
+        font-size: 25px;
+        box-sizing: border-box;
+        padding: 70px 50px;
+     }
+     .islamic-services-block:hover::after{
+        height: 85%;
+        opacity: 0.7;
+     }
+     .islamic-container2-mobile{
+         display: none;
+     }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+     /* ----------------Inside Tourism page------------------- */
+     .inside-container1{
+        width: 100%;
+        margin: auto;
+    }
+    .inside-search{
+        width: 60%;
+        height: 200px;
+        /* border: 1px solid hotpink; */
+        margin: auto;
+        padding-top: 50px;
+        text-align: center;
+        position: relative;
+    }
+    .searchbar{
+        width: 80%;
+        height: 50px;
+        text-align: right;
+        outline: none;
+        padding-right: 20px;
+        font-size: 25px;
+        border-radius: 20px;
+        border: 3px solid darkcyan;
+    }
+    .inside-search i{
+        font-size: 30px;
+        color: white;
+        background-color: darkcyan;
+        padding: 10px 15px;
+        position: absolute;
+        left: 10%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .inside-container2{
+        width: 100%;
+        margin: auto;
+        height: 2500px;
+    }
+    .inside-content{
+        width: 95%;
+        height: 2200px;
+        /* border: 1px solid navy; */
+        margin: auto;
+        /* background-color: rgb(241, 241, 241); */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .inside-content-block{
+        width: 100%;
+        height: 500px;
+        /* border: 1px solid indigo; */
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+
+    }
+    .inside-content-block-img{
+        width: 40%;
+        height: 100%;
+        /* border: 1px solid rgb(255, 88, 28); */
+        /* padding: 10px; */
+    }
+    .inside-content-block-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .inside-content-block-title{
+        width: 60%;
+        height: 100%;
+        background-color: rgb(231, 242, 245);
+        text-align: right;
+        padding: 20px 25px;
+        /* border: 1px solid firebrick; */
+    }
+    .inside-content-block-title h2{
+        /* display: inline-block; */
+        /* margin: 0px 40%; */
+        /* margin-right: 28%; */
+        /* margin: auto; */
+        font-size: 30px;
+        /* border: 1px solid brown; */
+        /* width: 650px; */
+        line-height: 100px;
+    }
+    .inside-content-block-title p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .inside-content-block-title button{
+        width: 170px;
+        height: 40px;
+        font-size: 20px;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        background-color: darkcyan;
+        float: left;
+        margin: 8% 10%;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+    .footer{
+        width: 100%;
+        height: 150px;
+        background-color: black;
+        position: absolute; bottom: 0;
+        right: 0; left: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .footer-item{
+        width: 100%;
+        height: 32%;
+        /* background-color: chocolate; */
+        /* margin: 0px 15px; */
+        /* float: right;
+        margin-top: 30px;
+        padding: 45px 30px;
+        text-align: right; */
+    }
+    .first{
+        /* height: 30%; */
+        margin-top: 0px;
+    }
+    .footer-logo{
+        width: 25%;
+        height: 100%;
+        margin: 0px 36%;
+    }
+    .footer-logo img{
+        width: 100%;
+        height: 100%;
+    }
+    .second{
+        text-align: center;
+        height: 29%;
+    }
+    .second a{
+        text-decoration: none;
+    }
+    .second i{
+        font-size: 40px;
+        color: rgb(189, 188, 188);
+        margin: 0px 10px;
+    }
+    .third{
+        /* height: 20%; */
+        text-align: right;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+    }
+    .third-add{
+        width: 60%;
+        height: 100%;
+        padding-right: 5%;
+    }
+    .third-add a{
+        color: white;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .third-call{
+        width: 30%;
+        height: 100%;
+        margin-right: 20px;
+    }
+    .third-call a{
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+    }
+    
+}
+
+
+@media all and (max-width:1000px){
+    .header{
+        width: 100%;
+        height: 130px;
+        background-color: rgb(239, 244, 252);
+        position: relative;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 20;
+        border-bottom: 2px solid gray;
+    }
+    .header-wrapper{
+        max-width: 1300px;
+        height: 100%;
+        margin: 0px auto;
+        text-align: right;
+        /* border: 1px solid black; */
+        /* overflow: auto; */
+    }
+    .header-logo{
+        width: 420px;
+        height: 120px;
+        /* border: 1px solid black; */
+        float: right;
+        /* margin-top: 10px; */
+        /* margin-right: 100px; */
+    }
+    .header-nav{
+        display: none;
+    }
+    .header-tourism{
+        display: none;
+    }
+    .header-icons{
+       display: none;
+    }
+    .header-menu{
+        width: 180px;
+        height: 130px;
+        /* border: 1px solid black; */
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+    }
+    .header-menu button{
+        border: none;
+        background: none;
+    }
+    .header-menu img{
+        width: 160px;
+        height: 120px;
+        cursor: pointer;
+    }
+    .header-sidebar{
+        width:50%;
+        /* height: 3050px; */
+        background-color:  rgb(239, 244, 252);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        overflow: scroll;
+        /* border: 1px solid green; */
+    }
+    .header-sidebar i{
+        font-size: 70px;
+        float: left;
+        margin: 20px;
+        cursor: pointer;
+    }
+    .header-sidebar-content{
+        width: 100%;
+        height: 250px;
+        /* border: 1px solid violet; */
+        margin-top: 50px;
+    }
+    .header-sidebar-item{
+        width: 100%;
+        height: 100px;
+        /* border: 1px solid yellow; */
+        margin-top: 20px;
+        /* text-align: right; */
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+    }
+    .header-sidebar-item a{
+        text-decoration: none;
+        color: black;
+        font-size: 30px;
+        margin-right: -10px;
+    }
+    .header-sidebar-item i{
+        font-size: 50px;
+        margin-right: 50px;
+    }
+    .header-sidebar-tourism{
+        width: 100%;
+        height: 300px;
+        /* border: 1px solid brown; */
+        /* background-color: rgb(231, 237, 247); */
+        margin-top: -10px;
+        /* margin-right: 30px; */
+        /* float: right; */
+        padding-top: 5px;
+        display: none;
+    }
+    .header-sidebar-tourism-item{
+        width: 100%;
+        height: 100px;
+        /* border: 1px solid darkblue; */
+        /* text-align: center; */
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        padding-right: 60px;
+    }
+    .header-sidebar-tourism-item a{
+        font-size: 25px;
+        text-decoration: none;
+        color: black;
+        margin-right: -10px;
+    }
+    .header-sidebar-tourism hr{
+        display: none;
+        margin-top: 3px;
+    }
+    .header-sidebar-tourism-item i{
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    .travel:hover .header-sidebar-tourism{
+        display: block;
+    }
+    .show{
+        display: block;
+    }
+    .header-sidebar-item::after{
+        content: "";
+        background-color: rgb(189, 189, 189);
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        width: 0;
+        height: 100%;
+        transition: 1.5s;
+    }
+    .header-sidebar-item:hover::after{
+        background-color: rgb(189, 189, 189);
+        opacity: 0.5;
+        width: 100%;
+    }
+       /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main{
+        width: 100%;
+        margin: auto;
+        /* min-height: 100vh; */
+        margin-top: 130px;
+        position: relative;
+    }
+    .main-container{
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 80px; */
+    }
+    .main-img-slider{
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        /* border: 1px solid blue; */
+    }
+    .main-img-slides{
+        width: 500%;
+        height: 350px;
+        display: flex;
+    }
+    .main-img-slides input{
+        display: none;
+    }
+    .slide{
+        width: 20%;
+        transition: 2s;
+    }
+    .slide img{
+        width: 100%;
+        height: 350px;
+    }
+    .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 310px;
+    }
+    .navigation-auto div{
+        border: 2px solid cornflowerblue;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    .navigation-auto div:not(:last-child){
+        margin-right: 40px;
+    }
+    #radio1:checked ~ .first{
+        margin-left: 0;
+    }
+    #radio2:checked ~ .first{
+        margin-left: -20%;
+    }
+    #radio3:checked ~ .first{
+        margin-left: -40%;
+    }
+    #radio4:checked ~ .first{
+        margin-left: -60%;
+    }
+    #radio1:checked ~ .navigation-auto .auto-btn1{
+        background: cornflowerblue;
+    }
+    #radio2:checked ~ .navigation-auto .auto-btn2{
+        background: cornflowerblue;
+    }
+    #radio3:checked ~ .navigation-auto .auto-btn3{
+        background: cornflowerblue;
+    }
+    #radio4:checked ~ .navigation-auto .auto-btn4 {
+        background: cornflowerblue;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container1{
+        display: none;
+    }
+    .main-container2{
+        display: none;
+    }
+    .main-container3{
+        display: none;
+    }       
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container1-mobile{
+        width: 100%;
+        margin: auto;
+    }
+    .mobile-tourism{
+        width: 100%;
+        height: 450px;
+        /* border: 1px solid chocolate; */
+    }
+    .mobile-tourism-title{
+        width: 95%;
+        height: 30px;
+        /* border: 1px solid teal; */
+        margin: 40px 30px;
+        /* float: right; */
+    }
+    .mobile-tourism-title button{
+        border: none;
+        outline: none;
+        background: none;
+        float: right;
+        width: 120px;
+        height: 30px;
+        margin: 0px 3%;
+        cursor: pointer;
+        border-radius: 30px;
+        font-size: 80%;
+        /* background-color: rgb(235, 88, 35); */
+    }
+    .mobile-tourism-title button:hover{
+        background-color: rgb(255, 88, 28);
+        color: white;
+    }
+    .mobile-tourism-title-line{
+        width: 1px;
+        height: 27px;
+        background-color: cornflowerblue;
+        float: right;
+    }
+    .mobile-tourism-content{
+        /* width: 90%; */
+        width: 98%;
+        height: 300px;
+        margin: 50px auto;
+        border: 1px solid darkcyan;
+    }
+      .insideEgypt-mobile{
+        display: flex;
+      padding: 0 35px;
+      height: 300px;
+      align-items: center;
+      justify-content: center;
+      /* background: #343F4F; */
+      /* border: 1px solid black; */
+      /* display: none; */
+      }
+      .insideEgypt-img-mobile{
+      /* width: 950px; */
+        display: flex;
+      /* max-width: 600px; */
+      position: relative;
+      /* border: 1px solid violet; */
+      width: 940px;
+      }
+      .insideEgypt-img-mobile i{
+        top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      position: absolute;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 5;
+      }
+      .insideEgypt-img-mobile i:active{
+      transform: translateY(-50%) scale(0.9);
+      }
+      .insideEgypt-img-mobile i:hover{
+      background: #f2f2f2;
+      }
+      .insideEgypt-img-mobile i:first-child{
+      left: -22px;
+      display: none;
+      }
+      .insideEgypt-img-mobile i:last-child{
+      right: -20px;
+      }
+      .insideEgypt-img-mobile .insideEgypt-img-item-mobile{
+        font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      }
+      .insideEgypt-img-item-mobile.draggin4{
+        cursor: grab;
+        scroll-behavior: auto;
+      }
+      .insideEgypt-img-item-mobile.dragging4 img{
+        pointer-events: none;
+      }
+      .insideEgypt-img-item-mobile img{
+        width: 940px;
+        height: 270px;
+        object-fit: cover;
+        user-select: none;
+        margin-left: 0px;
+      }
+      .insideEgypt-img-item-mobile img:first-child{
+        margin-left: 0px;
+      }
+      .beach-mobile{
+        position: relative;
+        display: inline-block;
+      }
+      .beach-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* visibility: hidden; */
+      }
+      .beach-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .hotel-mobile{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+      }
+      .hotel-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        /* display: none; */
+        z-index: 10;
+        /* margin-left: 5px; */
+        /* visibility: hidden; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hotel-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .couples-mobile{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+      }
+      .couples-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 7px; */
+        /* visibility: hidden; */
+      }
+      .couples-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .flights-mobile{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+      }
+      .flights-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 10px 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 7px; */
+        /* visibility: hidden; */
+      }
+      .flights-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .outsideEgypt-mobile{
+        display: flex;
+      padding: 0 35px;
+      height: 300px;
+      align-items: center;
+      justify-content: center;
+      /* background: #343F4F; */
+      /* border: 1px solid black; */
+      display: none;
+      }
+      .outsideEgypt-img-mobile{
+        /* width: 950px; */
+        display: flex;
+      /* max-width: 600px; */
+      position: relative;
+      /* border: 1px solid violet; */
+      width: 940px;
+      }
+      .outsideEgypt-img-mobile i{
+        top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      position: absolute;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 5;
+      }
+      .outsideEgypt-img-mobile i:active{
+      transform: translateY(-50%) scale(0.9);
+      }
+      .outsideEgypt-img-mobile i:hover{
+      background: #f2f2f2;
+      }
+      .outsideEgypt-img-mobile i:first-child{
+      left: -22px;
+      display: none;
+      }
+      .outsideEgypt-img-mobile i:last-child{
+      right: -20px;
+      }
+      .outsideEgypt-img-mobile .outsideEgypt-img-item-mobile{
+        font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      }
+      .outsideEgypt-img-item-mobile.draggin5{
+        cursor: grab;
+        scroll-behavior: auto;
+      }
+      .outsideEgypt-img-item-mobile.dragging5 img{
+        pointer-events: none;
+      }
+      .outsideEgypt-img-item-mobile img{
+        width: 940px;
+        height: 270px;
+        object-fit: cover;
+        user-select: none;
+        margin-left: 0px;
+      }
+      .outsideEgypt-img-item-mobile img:first-child{
+        margin-left: 0px;
+      }
+      .europe-mobile{
+        position: relative;
+        display: inline-block;
+      }
+      .europe-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* visibility: hidden; */
+      }
+      .europe-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .turkey-mobile{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+      }
+      .turkey-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        /* display: none; */
+        z-index: 10;
+        /* margin-left: 5px; */
+        /* visibility: hidden; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .turkey-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .visa-mobile{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+      }
+      .visa-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        /* margin-left: 7px; */
+        /* visibility: hidden; */
+      }
+      .visa-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .hajj-mobile{
+        display: flex;
+      padding: 0 35px;
+      height: 300px;
+      align-items: center;
+      justify-content: center;
+      /* background: #343F4F; */
+      /* border: 1px solid black; */
+      display: none;
+      }
+      .hajj-img-mobile{
+       /* width: 950px; */
+       display: flex;
+       /* max-width: 600px; */
+       position: relative;
+       /* border: 1px solid violet; */
+       width: 940px;
+      }
+      .hajj-img-mobile i{
+        top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      position: absolute;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 5;
+      }
+      .hajj-img-mobile i:active{
+      transform: translateY(-50%) scale(0.9);
+      }
+      .hajj-img-mobile i:hover{
+      background: #f2f2f2;
+      }
+      .hajj-img-mobile i:first-child{
+      left: -22px;
+      display: none;
+      }
+      .hajj-img-mobile i:last-child{
+      right: -20px;
+      }
+      .hajj-img-mobile .hajj-img-item-mobile{
+        font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      }
+      .hajj-img-item-mobile.draggin6{
+        cursor: grab;
+        scroll-behavior: auto;
+      }
+      .hajj-img-item-mobile.dragging6 img{
+        pointer-events: none;
+      }
+      .hajj-img-item-mobile img{
+        width: 940px;
+        height: 270px;
+        object-fit: cover;
+        user-select: none;
+        margin-left: 0px;
+      }
+      .hajj-img-item-mobile img:first-child{
+        margin-left: 0px;
+      }
+      .hajj-flights-mobile{
+        position: relative;
+        display: inline-block;
+      }
+      .hajj-flights-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* visibility: hidden; */
+      }
+      .hajj-flights-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+      .hajj-hotels-mobile{
+        position: relative;
+        display: inline-block;
+        margin-left: 14px;
+      }
+      .hajj-hotels-overlay-mobile{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        /* padding: 20px 20px; */
+        /* display: none; */
+        z-index: 10;
+        /* margin-left: 5px; */
+        /* visibility: hidden; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hajj-hotels-overlay-mobile span{
+        color: white;
+        font-size: 23px;
+        display: block;
+      }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container4{
+        width: 100%;
+        margin: auto;
+        /* display: none; */
+    }
+    .diploma{
+        width: 100%;
+        height: 660px;
+        /* border: 1px solid black; */
+        margin: auto;
+        padding-top: 50px;
+    }
+    .diploma-content{
+        /* max-width: 800px;
+        min-width: 600px; */
+        width: 98%;
+        height: 100%;
+        margin: auto;
+        /* border: 1px solid navy; */
+    }
+    .diploma-content-img{
+        width: 100%;
+        height: 300px;
+        /* border:   1px solid black; */
+        /* float: right; */
+        margin: auto;
+
+    }
+    .diploma-content-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .diploma-content-details{
+        width: 90%;
+        height: 250px;
+        /* border: 1px solid black; */
+        /* float: right; */
+        /* margin-right: 40px; */
+        margin: auto;
+        text-align: right;
+        padding: 30px 20px;
+        /* display: none; */
+    }
+    .diploma-content-details h2{
+        font-size: 25px;
+        /* line-height: 100px; */
+    }
+    .diploma-content-details p{
+        font-size: 18px;
+        font-weight: 300;
+        color: rgb(37, 37, 37);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .diploma-content-details button{
+        width: 150px;
+        height:30px;
+        float: left;
+        margin-top: 2%;
+        font-size: 12px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(89, 162, 187);
+        color: white; 
+        cursor: pointer;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container5{
+        width: 100%;
+        margin: auto;
+        /* display: none; */
+    }
+    .counter{
+        width: 100%;
+        height: 200px;
+        /* border: 1px solid black; */
+        background-image: url(../img/countercover.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        z-index: -1;
+    }
+    .counter-overlay{
+        width: 100%;
+        height: 100%;
+        position: absolute; top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+    .counter-content{
+        width: 85%;
+        height: 150px;
+        /* margin: 100px auto; */
+        /* border: 2px solid navy; */
+        /* z-index: 10; */
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .counter-content-item{
+        width: 250px;
+        height: 100%;
+        /* background-color: brown;  */
+        margin-right: 10px;
+        float: left;
+        padding: 20px  10px;
+        text-align: center;
+    }
+    .counter-content-item i{
+        font-size: 35px; 
+        color: cornflowerblue;
+    }
+    .counter-content-item h3{
+        font-size: 25px;
+        color: white;
+        line-height: 60px;
+    }
+    .counter-content-item span{
+        font-size: 13px;
+        color: white;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .main-container6{
+        width: 100%;
+        height: 1040px;
+        /* border: 1px solid darkblue; */
+        /* display: none; */
+        margin: auto;
+    }
+    .services{
+        width: 98%;
+        /* max-width: 800px;
+        min-width: 600px; */
+        height: 450px;
+        /* float: right; */
+        margin: 0px 25px;
+        /* border: 1px solid black; */
+        background-color: whitesmoke;
+        margin: 20px auto;
+        text-align: center;
+        padding: 50px 20px;
+        /* text-align: center; */
+    }
+    .services-title{
+        width: 200px;
+        height: 60px;
+        margin: auto;
+        /* border: 1px solid black; */
+    }
+    .services-title h3{
+        font-size: 30px;
+    }
+    .services-title hr{
+        width: 60px;
+        border: 3px solid orangered;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .services-item{
+        width: 29%;
+        height: 260px;
+        /* border: 1px solid black; */
+        float: right;
+        margin: 30px 15px;
+        text-align: center;
+        padding: 10px 0px;
+    }
+    .services-item  img{
+        width: 100px;
+        height: 100px;
+    }
+    .services-item h4{
+        font-size: 18px;
+        line-height: 60px;
+    }
+    .services-item span{
+        font-size: 15px;
+    }
+    .feedback{
+        width: 98%;
+        height: 400px;
+        /* float: right; */
+        margin: 0px auto;
+        /* border: 1px solid black; */
+        background-color: rgb(241, 234, 234);
+        margin: 20px auto;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    .feedback-title{
+        width: 200px;
+        height: 60px;
+        margin: auto;
+        /* border: 1px solid black; */
+    }
+    .feedback-title h3{
+        font-size: 30px;
+    }
+    .feedback-item{
+        width: 44%;
+        height: 200px;
+        /* border: 1px solid black; */
+        float: right;
+        margin: 20px 20px;
+        background-color: white;
+        text-align: right;
+        padding: 30px 35px;
+    }
+    .feedback-item i{
+        font-size: 40px;
+        float: right;
+    }
+    .feedback-item-title{
+        width: 150px;
+        height: 70px;
+        /* border: 1px solid black; */
+        float: right;
+        margin-right: 50px;
+        padding: 0px 15px;
+    }
+    .feedback-item-title h4{
+        font-size: 17px;
+        /* display: inline-block; */
+        margin: 0px 80px;
+    }
+    .feedback-item-title i{
+        font-size: 15px;
+        margin-top: 10px;
+        color: gold;
+    }
+    .feedback-item-content{
+        width: 90%;
+        height: 100px;
+        /* border: 1px solid chocolate; */
+        margin: 100px auto;
+    }
+    .feedback-item-content span{
+        font-size: 13px;
+    }
+    /* ----------------diploma page------------------- */
+    .main-img-diploma{
+        width: 100%;
+        height: 600px;
+        /* border: 1px solid hotpink; */
+        /* position: relative; */
+    }
+    .main-img-diploma img{
+        width: 100%;
+        height: 100%;
+    }
+    .diploma-section{
+        display: none;
+    }
+    .diploma-section-mobile{
+        width: 98%;
+        /* height: 1200px; */
+        /* border: 1px solid red; */
+        /* position: absolute;
+        bottom: -25%;
+        right: 20%; */
+        margin: 50px auto;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .diploma-section-block{
+        width: 31%;
+        height: 400px;
+        margin-top: 10px;
+        /* padding-top: 200px; */
+        position: relative;
+       transform-style: preserve-3d;
+       transition: 2s;
+
+    }
+    .diploma-section-block h3{
+        font-size: 25px;
+        line-height: 50px;
+    }
+    .diploma-section-block i{
+        font-size: 90px;
+        line-height: 70px;
+    }
+    .front{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(35, 70, 136);
+        text-align: center;
+        color: white;
+        padding-top: 130px;
+        /* border-radius: 30px; */
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        backface-visibility: hidden;
+    }
+    .back,.back2,.back3{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: white;
+        padding-top: 40px;
+        /* border-radius: 30px; */
+        position: absolute;
+        top: 0;
+        transform: rotateY(180deg);
+        position: relative;
+        background-position: center;
+        background-size: cover;
+    }
+    .back{
+        background-image: url(../img/certificate.jpg);
+    }
+    .back2{
+        background-image: url(../img/instructor.jpg);
+    }
+    .back3{
+        background-image: url(../img/certificate.jpg);
+    }
+    .back-overlay{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .diploma-section-block:hover{
+        transform: rotateY(180deg);
+    }    
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .diploma-container1{
+        display: none;
+    }
+    .diploma-container-mobile{
+        /* width: 100%;
+        height: 1500px;
+        border: 1px solid cadetblue; */
+        /* margin-top: 1250px; */
+        /* display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap; */
+        background: #eee;
+        height: 1800px;
+        /* box-sizing: border-box; */
+        padding-top: 10vh;
+        /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  */
+        font-weight: 300;
+        line-height: 1.5;
+        max-width: 100%;
+        margin: 50px auto 0px auto;
+        font-size: 112%;
+        /* border: 1px solid cadetblue; */
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .tabs {
+        display: flex;
+        flex-wrap: wrap; 
+        
+    }
+    .tabs label {
+        order: initial; 
+        display: block;
+        /* padding: 3rem 2rem; */
+        height: 120px;
+        /* border: 1px solid violet; */
+        width: 100%;
+        padding: 25px 20px;
+        font-size: 50px;
+        margin-right: 0;
+        margin-top: 0.2rem;
+        cursor: pointer;
+        background: #90CAF9;
+        font-weight: bold;
+        transition: background ease 0.2s;
+    }
+    .tabs .tab {
+        order: initial; 
+        flex-grow: 1;
+        width: 100%;
+        display: none;
+        /* padding: 1rem; */
+        height: 900px;
+        /* border: 1px solid firebrick; */
+        background: #fff;
+        text-align: center;
+
+    }
+    .tabs input[type="radio"] {
+        display: none;
+    }
+    .tabs input[type="radio"]:checked + label {
+        background: #fff;
+    }
+    .tabs input[type="radio"]:checked + label + .tab {
+        display: block;
+    }
+    .tab img{
+        width: 96%;
+        height: 300px;
+        /* margin: auto; */
+    }
+    .tab .tab-content{
+        width: 98%;
+        height: 300px;
+        padding: 30px 20px;
+        margin: auto;
+        text-align: right;
+    }
+    .tab-content p{
+        font-size: 30px;
+        line-height: 45px;
+    }
+    .tab-content button{
+        width: 250px;
+        height: 62px;
+        font-size: 25px;
+        float: left;
+        border-radius: 5px 30px;
+        border: none;
+        margin-top: 10%;
+        margin-left: 10%;
+        background-color:  #033f70;
+        color: white;
+        cursor: pointer;
+    }
+    /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+     /* ----------------Islamic Tourism page------------------- */
+     .main-islamic{
+        width: 100%;
+        height: 900px;
+        /* margin-top: 130px; */
+        /* border: 1px solid brown; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        /* justify-content: space-evenly; */
+    }
+    .main-islamic-title{
+        width: 100%;
+        height: 400px;
+        /* border: 1px solid red; */
+        /* margin-right: 5%; */
+        padding: 100px 50px;
+        text-align: right;
+        /* background-color: F4D160; */
+    }
+    .main-islamic-title h2{
+        font-size: 50px;
+
+    }
+    .main-islamic-title x{
+        color: rgb(167, 90, 36);
+    }
+    .main-islamic-title p{
+        font-size:  26px;
+        margin-top: 20px;
+    }
+    .main-islamic-title button{
+        width: 200px;
+        height: 50px;
+        font-size: 30px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        background-color: rgb(167, 90, 36);
+        float: left;
+        margin-top: 7%;
+        margin-left: 10%;
+        transition: .5s;
+        cursor: pointer;
+    }
+    .main-islamic-title button:hover {
+        transform: scale(1.1);
+    }
+    .main-islamic-video{
+        width: 100%;
+        height: 500px;
+        /* border: 1px solid black; */
+        /* margin-right: 10%; */
+        /* background-color: grey; */
+        /* padding: 50px;/ */
+        margin: auto;
+        padding-top: 50px;
+        /* display: none; */
+    }
+    .main-islamic-video video{
+        width: 100%;
+        height: 90%;
+    }
+    .islamic-container1{
+        width: 100%;
+        /* margin: auto; */
+        /* float: left; */
+        /* border: 1px solid darkblue; */
+        /* display: none; */
+    }
+    .islamic-tours{
+        width: 80%;
+        height: 2300px;
+        /* border: 1px solid rgb(29, 43, 83); */
+        /* margin: 50px auto; */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .islamic-tour-block{
+        width: 100%;
+        height: 700px;
+        /* border: 1px solid black; */
+        position: relative;
+        background-color: whitesmoke;
+    }
+    .islamic-tour-img{
+        width: 100%;
+        height: 450px;
+        /* border: 1px solid greenyellow; */
+    }
+    .islamic-tour-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .islamic-tour-title{
+        width: 150px;
+        height: 50px;
+        border: 1px solid rgb(167, 90, 36);
+        background-color: white;
+        border-radius: 20px;
+        /* margin: -25px auto; */
+        /* z-index: 10; */
+        position: absolute;
+        top: 425px;
+        left: 41%;
+        text-align: center;
+        font-size: 22px;
+        padding-top: 8px;
+    }
+    .islamic-tour-content{
+        width: 100%;
+        height: 200px;
+        margin-top: 50px;
+        /* border: 1px solid darkcyan; */
+        padding: 25px;
+        text-align: center;
+    }
+    .islamic-tour-content p{
+        font-size: 18px;
+    }
+    .islamic-tour-content button{
+        width: 190px;
+        height: 45px;
+        margin: 7% 38%;
+        font-size: 20px;
+        border: 1px solid darkcyan;
+        border-radius: 10px;
+        background: none;
+    }
+    .islamic-tour-content button:hover{
+        background-color: darkcyan;
+        color: white;
+    }
+    .islamic-container2{
+        display: none;
+    }
+    .islamic-container2-mobile{
+        margin-top: 100px;
+        width: 100%;
+        /* background-color: rgb(241, 241, 241); */
+
+        height: 900px;
+        /* border: 1px solid gold; */
+        /* margin: auto; */
+    }
+    .islamic-services-mobile{
+        width: 100%;
+        height: 700px;
+        background-color: rgb(241, 241, 241);
+        /* border: 1px solid firebrick; */
+        margin: auto;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .islamic-services-mobile h2{
+        font-size: 40px;
+    }
+    .islamic-services-mobile hr{
+        width: 200px;
+        margin: 15px auto;
+        border: 3px solid rgb(167, 90, 36);
+    }
+    .islamic-services-tabs{
+        width: 95%;
+        height: 50px;
+        /* border: 1px solid darkblue; */
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .islamic-services-tabs button{
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        border: none;
+        background-color: rgb(177, 108, 59);
+        color: white;
+        border-radius: 30px 10px;
+    }
+    .islamic-services-mobile-blocks{
+        width: 95%;
+        height: 400px;
+        /* border: 1px solid teal; */
+        margin-top: 50px;
+    }
+    .islamic-services-visa{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        /* border: 1px solid #343F4F; */
+    }
+    .islamic-services-hotel{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        display: none;
+
+        /* border: 1px solid #343F4F; */
+    }
+    .islamic-services-plane{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        /* border: 1px solid #343F4F; */
+        display: none;
+
+    }
+    .islamic-services-img{
+        width: 45%;
+        height: 100%;
+        /* border: 1px solid firebrick; */
+        padding: 20px;
+    }
+    .islamic-services-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .islamic-services-mobile-title{
+        width: 55%;
+        height: 100%;
+        /* border: 1px solid darkblue; */
+        padding: 150px 20px;
+    }
+    .islamic-services-mobile-blocks p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+     /* ----------------Inside Tourism page------------------- */
+     .inside-container1{
+        width: 100%;
+        margin: auto;
+    }
+    .inside-search{
+        width: 90%;
+        height: 200px;
+        /* border: 1px solid hotpink; */
+        margin: auto;
+        padding-top: 70px;
+        text-align: center;
+        position: relative;
+    }
+    .searchbar{
+        width: 80%;
+        height: 70px;
+        text-align: right;
+        outline: none;
+        padding-right: 20px;
+        font-size: 25px;
+        border-radius: 20px;
+        border: 3px solid darkcyan;
+    }
+    .inside-search i{
+        font-size: 40px;
+        color: white;
+        background-color: darkcyan;
+        padding: 15px 25px;
+        position: absolute;
+        left: 10%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .inside-container2{
+        width: 100%;
+        margin: auto;
+        height: 3800px;
+    }
+    .inside-content{
+        width: 95%;
+        height: 3500px;
+        /* border: 1px solid navy; */
+        margin: auto;
+        /* background-color: rgb(241, 241, 241); */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .inside-content-block{
+        width: 100%;
+        height: 800px;
+        /* border: 1px solid indigo; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+    }
+    .inside-content-block-img{
+        width: 100%;
+        height: 350px;
+        /* border: 1px solid rgb(255, 88, 28); */
+        /* padding: 10px; */
+    }
+    .inside-content-block-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .inside-content-block-title{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(231, 242, 245);
+        text-align: right;
+        padding: 20px 25px;
+        /* border: 1px solid firebrick; */
+    }
+    .inside-content-block-title h2{
+        /* display: inline-block; */
+        /* margin: 0px 40%; */
+        /* margin-right: 28%; */
+        /* margin: auto; */
+        font-size: 30px;
+        /* border: 1px solid brown; */
+        /* width: 650px; */
+        line-height: 100px;
+    }
+    .inside-content-block-title p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .inside-content-block-title button{
+        width: 170px;
+        height: 40px;
+        font-size: 20px;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        background-color: darkcyan;
+        float: left;
+        margin: 8% 10%;
+    }
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    .footer{
+        width: 100%;
+        height: 170px;
+        background-color: black;
+        position: absolute; 
+        bottom: 0;
+        right: 0; left: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        /* display: none; */
+    }
+    .footer-item{
+        width: 100%;
+        height: 70px;
+    }
+    .footer-logo{
+        width: 40%;
+        height: 100%;
+        margin-left: 230px;
+    }
+    .footer-logo img{
+        width: 100%;
+        height: 100%;
+    }
+    .second{
+        height: 40px;
+        text-align: center;
+    }
+    .second i{
+        font-size: 30px;
+        color: rgb(189, 188, 188);
+        margin: 0px 10px;
+    }
+    .second a{
+        text-decoration: none;
+    }
+    .third{
+        height: 20%;
+        text-align: right;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+    }
+    .third-add{
+        width: 60%;
+        height: 100%;
+        padding-right: 30px;
+    }
+    .third-add a{
+        color: white;
+        text-decoration: none;
+    }
+    .third-call{
+        width: 30%;
+        height: 100%;
+        margin-right: 20px;
+    }
+    .third-call a{
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+    }
+}
